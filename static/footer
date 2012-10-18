@@ -1,0 +1,26 @@
+				</div>
+					<div id="sidebar">    
+						<div id="sidebar-widget">   
+							<div class="sidebar-heading">
+								Recent Posts
+							</div>
+							<ul>
+								<!-- recent posts --> 
+							</ul>
+						</div>
+					</div>
+					<div id="clear">
+					</div>
+				</div>
+				<div class="line-footer">
+					<div style="text-align:center; padding-top:3px;">
+					      <a href="archive.html">Archive</a>
+    </div>
+    <div style="text-align:center;">
+        This site is built with blogpy :) 
+    </div>
+				</div>
+			</div>    
+		</div>
+	</body>
+</html>

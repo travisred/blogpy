@@ -8,9 +8,9 @@ Version: 1.1.7
 Tags: white, blue, one-column, fixed-width, full-width-template, sticky-post, theme-options, translation-ready, editor-style, two-columns, right-sidebar, custom-header, custom-menu, light, gray
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
+
+Modified by Travis Reddell
 */
-
-
 
 /* ---------------------------------- Start ---------------------------------- */
 
@@ -43,10 +43,6 @@ img.alignright {
 	margin-left: 1.625em;
 	margin-top: 1.625em;
 	margin-bottom: 1.625em;
-}
-
-.sticky {
-	
 }
 
 .aligncenter {
@@ -197,110 +193,6 @@ em {
 
 strike, del, s {
 	text-decoration: line-through;
-}
-
-
-/* --------- Forms --------- */
-
-input[type=text] {
-    border:1px solid #dcdcdc;
-	background-color: #f6f6f6;
-	outline: none;
-	width:60%;
-	font-size:18px;
-	font-family: Helvetica;
-	font-weight: 100;
-	padding:13px 15px 13px 15px;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-
- }
- 
-input[type=password] {
-border:1px solid #dcdcdc;
-	background-color: #f6f6f6;
-	outline: none;
-	letter-spacing: .3em;
-	font-size:18px;
-	font-family: Helvetica;
-	font-weight: 100;
-	padding:13px 15px 13px 15px;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-
- }
-
- 
-input[type=text]:focus, input[type=password]:focus {
-border:1px solid #b9b9b9;
--webkit-transition: 0.5s;
-   -moz-transition: 0.5s;
-   -o-transition: 0.5s;
- }
-
-textarea {
-	border:1px solid #dcdcdc;
-	background-color: #f6f6f6;
-	outline: none;
-	width:75%;
-	font-size:18px;
-	font-family: Helvetica;
-	font-weight: 100;
-	padding:15px 15px 15px 15px;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-}
-
-textarea:focus {
-	border:1px solid #b9b9b9;
-	-webkit-transition: 0.5s;
-   -moz-transition: 0.5s;
-   -o-transition: 0.5s;
-}
-
-input[type=submit] {
-	background-color: #0092e0;
-	padding:16px 50px;
-	cursor: pointer;
-	color:#fff;
-	font-size:16px;
-	font-weight: bold;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-	border:0;
-	-webkit-transition: 0.3s;
-   -moz-transition: 0.3s;
-   -o-transition: 0.3s;
-}
-
-input.search-sidebar {
-	width:175px;
-	margin:-1px 0 0 0px;
-	border:0;
-	background-color: #f6f6f6;
-	border:1px solid #dadada;
-	outline: none;
-	font-size:16px;
-	color:#acacac;
-	font-family: Helvetica;
-	font-weight: 100;
-	padding:12px 15px 11px 15px;
-	border-radius: 30px;
-	-moz-border-radius:30px;
-	-khtml-border-radius:30px;
-	-webkit-transition: 0.6s;
-   -moz-transition: 0.6s;
-   -o-transition: 0.6s;
-}
-
-input.search-sidebar:focus {
-    outline: none;
-	border:1px solid #dadada;
-	color:#676767;
 }
 
 /* --------- Links --------- */
@@ -471,16 +363,6 @@ div.page-links a:last-child {
 	color: #515151;
 	margin:0 5px 0 0;
 }
-
-li.recentcomments {
-	padding:10px 5px 10px 0px;
-	border-bottom: 1px dotted #dedede;
-}
-
-li.recentcomments:last-child {
-	border:0;
-}
-
 /* --------- Tables --------- */
 
 table {
@@ -503,48 +385,6 @@ td {
 	border-top: 1px solid #ddd;
 	text-align: left;
 	padding: 10px 10px 10px 0px;
-}
-
-
-/* --------- WP-Calendar Styling --------- */
-
-table[id=wp-calendar] { 
-	border-collapse: collapse;
-	width:100%;
-}
-
-table[id=wp-calendar] caption {
-	font-weight:bold;
-	background-color: #3b3b3b;
-	color:#fff;
-	cursor: default;
-	padding:4px 0 8px 0;
-}
-
-table[id=wp-calendar] thead, table[id=wp-calendar] th {
-	text-align:center;
-	color:#fff;
-	background-color: #0092e0;
-}
-
-table[id=wp-calendar] th {
-   border-left: 1px solid #007fc9;
-   border-right: 1px solid #007fc9;
-   border-bottom: 1px solid #eee;
-   padding: 5px 5px 5px 5px;
-   cursor: default;
-   text-align:center;
-
-}
-
-table[id=wp-calendar] tbody, table[id=wp-calendar] td {
-	background-color: #f8f8f8;
-}
-
-table[id=wp-calendar] td { 
-	padding: 5px;
-	text-align: center;
-	border: 1px #ddd solid;
 }
 
 #slogan {
@@ -570,12 +410,6 @@ table[id=wp-calendar] td {
 	height:60px;
 }
 
-#search {
-    width:200px;
-    margin:25px 0 0 790px;
-	position: absolute;
-}
-
 /* ----------------- Mobile Layout ----------------- */
 
 @media only screen and (min-width: 1px) {
@@ -586,10 +420,6 @@ body {
 	background-color: #fff;
 	font-family: Helvetica;
 	font-weight: 100;
-}
-
-#search {
-	display: none;
 }
 
 ul, ol {
@@ -727,28 +557,6 @@ img {
 	height:auto;
 }
 
-
-/* ----------------- Show menu button ----------------- */
-
-#button {
-	max-width:150px;
-	cursor: pointer;
-	color:#fff;
-	padding: 10px 5px;
-	font-family: Helvetica;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	text-transform: uppercase;
-	font-weight: 100;
-	font-size:14px;
-	letter-spacing: .1em;
-	-webkit-border-radius: 5px;
-	background-color:#006eb2;
-	text-align: center;
-	margin:40px auto 80px auto;
-}
-
-
 /* ----------------- define site layout ----------------- */
 
 #content {
@@ -757,12 +565,6 @@ img {
 	font-weight: 100;
 	color:#515151;
 	line-height: 27px;
-}
-
-table[id=wp-calendar] { 
-	border-collapse: collapse;
-	width:100%;
-	margin:0 0 0 0px;
 }
 
 #sidebar {
@@ -785,21 +587,6 @@ table[id=wp-calendar] {
 	font-weight: 100;
 	color:#515151;
 	line-height: 27px;
-}
-
-#sidebar-widget li, ul.blogroll li {
-	list-style-type: none;
-	margin: 0 0 0 -20px;
-	padding: 3px 0;
-}
-
-#sidebar-widget li.recentcomments {
-	padding:10px 5px 10px 0px;
-	border-bottom: 1px dotted #dedede;
-}
-
-#sidebar-widget li.recentcomments:last-child {
-	border:0;
 }
 
 .sidebar-heading {
@@ -903,98 +690,6 @@ span.date {
 	background-color: #dddddd;
 }
 
-ul.footer-menu {
-font-family: Helvetica;
-font-weight: 100;
-padding: 20px 0 0 0px;
-text-align:center;
-font-size:14px;
-}
-
-ul.footer-menu li.menu-item {
-	display:inline;
-	line-height: 30px;
-	margin:0 10px 0px 10px;
-}
-
-
-/* ----------------- Comments ----------------- */
-
-.comment{
-	margin:50px 0 0 0;
-}
-
-.comment:first-child {
-	margin:0;
-}
-
-.show-comments {
-	margin:150px 0 0 0;
-}
-
-.commentline {
-	height:1px;
-	margin:0px 0px 30px 0px;
-	background-color: #dddddd;
-}
-
-.comment-name {
-	font-size:16px;
-	color: #0092e0;
-}
-
-.comment-date {
-    font-size:14px;
-	margin:-10px 0 0 0;
-}
-
-.comment-text {
-    margin:10px 0 0 0;
-    font-size: 16px;
-    line-height: 25px;
-}
-
-.countcomments {
-	font-size:30px;
-	margin:0px 0 50px 0;
-}
-
-.comment-fields {
-	margin:0;
-}
-
-.comment-box {
-	margin:-60px 0 0px 70px;
-}
-
-.comment-line {
-    background-color:#d2d2d2;
-    height:1px;
-	margin:5px 0 20px 0;
-	width:100%;
-}
-
-.avatar {
-	width:50px;
-	box-shadow: 0 1px 3px #9e9e9e;
-	height:50px;
-}
-
-.children .comment {
-	margin:50px 0 0 0px;
-}
-
-.children .children .comment {
-	margin:50px 0 0 0px;
-}
-
-.bypostauthor {
-	background-color: #f7f7f7; 
-	margin:30px 0px 0 0px;
-	padding:20px 25px 40px 25px;
-}
-
-
 }
 
 
@@ -1026,10 +721,6 @@ ul.footer-menu li.menu-item {
 img {
 	width:auto;
 	height:auto;
-}
-
-#button {
-	display: none;
 }
 
 #search {
@@ -1144,12 +835,6 @@ ul.nav {
 	border:0;
 }
 
-table[id=wp-calendar] { 
-	border-collapse: collapse;
-	width:100%;
-	margin:0 0 0 0px;
-}
-
 #sidebar div[id] {
 	text-align: left;
 	margin:0px 0px 50px 0px;
@@ -1175,9 +860,6 @@ table[id=wp-calendar] {
 	margin:0 0 0px 0;
 }
 
-
-
-
 #slogan {
     display: block;
     margin:-270px 0px 0px 0px;
@@ -1193,53 +875,6 @@ table[id=wp-calendar] {
 	font-size:20px;
 }
 
-
-/* ----------------- Gallery ----------------- */
-
-.wp-caption {
-	text-align: center;
-	font-size:13px;
-	font-style: italic;
-}
-
-.gallery-caption {
-	font-size: 13px;
-	font-style: italic;
-	line-height: 1.4;
-	text-align: center;
-	width:160px;
-	color: #666;
-}
-
-.gallery-item {
-   background-color:#fff;
-}
-
-.gallery-icon {
-	
-	margin:0 0 0 -55px;
-}
-
-.gallery-item img {
- 
-    border:0;
-	-webkit-border-radius: 6px;
-	   -moz-border-radius: 6px;
-	        border-radius: 6px;
-	        box-shadow:0 0 0 #000;
-}
-
-dl.gallery-item  {
-	margin:0;
-}
-dl.gallery-icon img {
-	border: 1px solid #ddd;
-}
-dl.gallery-item a {
-	border: none;
-}
-
-
 /* ----------------- Footer ----------------- */
 
 .line-footer {
@@ -1248,19 +883,4 @@ dl.gallery-item a {
 	width:1000px;
 	background-color: #dddddd;
 }
-
-ul.footer-menu {
-margin:0 0 0 0px;
-text-align:center;
-font-size:14px;
-}
-
-ul.footer-menu li.menu-item {
-	display:inline;
-	margin:0 10px 0px 10px;
-	line-height: 30px;
-}
-
-
-
 }

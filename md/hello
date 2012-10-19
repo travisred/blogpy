@@ -3,4 +3,6 @@
 2012-10-18
 <div class="articleline2"></div>
 
+![Hello, World! from blogpy](img/hello-world-blogpy.jpg "Hello, World!")
+
 This is the default example post for **blogpy**, a simple static blog generator in python. Simply edit this file in `/md/hello` or create a new file there to get started.

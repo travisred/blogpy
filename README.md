@@ -1,5 +1,8 @@
 blogpy
 ======
+
+![blogpy](https://raw.github.com/travisred/blogpy/master/screenshot.png)
+
 A simple static blog generator in python. You can see it in action at [magnatecha.com](http://magnatecha.com).
 
 **Requirements:**

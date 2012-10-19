@@ -9,7 +9,7 @@ A simple static blog generator in python. You can see it in action at [magnatech
 * Python 2.7
 * Python-Markdown package
 
-How to use:
+**How to use:**
 <ol>
 <li>git clone https://github.com/travisred/blogpy.git</li>
 <li>cd blogpy</li>

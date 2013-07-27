@@ -39,7 +39,7 @@ for post in posts:
 
   index_posts.append("<hr><div class="+date+"><a href='"+post+".html'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
   archive_links.append("<span>"+date+"</span><a href='"+post+".html'>" + string.replace(title, '#', '') + "</a><span><br />")
-  recent_posts.append("<li class="+date+"><a href='"+site_root+post+".html'>"+string.replace(title, '#', '') +"</a><li>")
+  recent_posts.append("<li class="+date+"><a href='"+site_root+post+".html'>"+string.replace(title, '#', '') +"</a></li>")
 
 #sort posts by publication date
 recent_posts.sort()

@@ -14,6 +14,7 @@ header_file = codecs.open("static/header", mode="r", encoding="utf8")
 header = header_file.read()
 header_file.close()
 header = string.replace(header, "site_root", Settings.site_root)
+header = string.replace(header, "site_name", Settings.site_name)
 header = string.replace(header, "site_description", Settings.site_description)
 
 footer_file = codecs.open("static/footer", mode="r", encoding="utf8")

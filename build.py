@@ -90,7 +90,7 @@ for post in posts:
   title = string.replace(title, '#', '')
   title = string.replace(title, '\n', '')
   curr_header = string.replace(header, "page_title", title)
-  curr_header = string.replace(header, "css/style.css", "../css/style.css")
+  curr_header = string.replace(curr_header, "css/style.css", "../css/style.css")
 
   post_file.write(curr_header + html + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()

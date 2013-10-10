@@ -1,6 +1,6 @@
 import os, markdown, codecs, string, re
+from settings import Settings
 
-site_root = ""
 index_posts = []
 recent_posts = []
 archive_links = []
@@ -8,19 +8,18 @@ archive_links = []
 posts = os.listdir(os.getcwd()+"/md")
 index_file = codecs.open("site/index.html", mode="w", encoding="utf8")
 
-archive_file = codecs.open("site/archive.html", mode="w", encoding="utf8")
+archive_file = codecs.open("site/archive/index.html", mode="w", encoding="utf8")
 
 header_file = codecs.open("static/header", mode="r", encoding="utf8")
 header = header_file.read()
 header_file.close()
+header = string.replace(header, "site_root", Settings.site_root)
+header = string.replace(header, "site_description", Settings.site_description)
 
-footer_index = codecs.open("static/footer", mode="r", encoding="utf8")
-footer_i = footer_index.read()
-footer_index.close()
-
-footer_post = codecs.open("static/footer_post", mode="r", encoding="utf8")
-footer_p = footer_post.read()
-footer_post.close()
+footer_file = codecs.open("static/footer", mode="r", encoding="utf8")
+footer = footer_file.read()
+footer_file.close()
+footer = string.replace(footer, "site_root", Settings.site_root)
 
 for post in posts:
   
@@ -37,9 +36,9 @@ for post in posts:
 
   html_post_start = re.search('<div class="articleline2"></div>', html)
 
-  index_posts.append("<hr><div class="+date+"><a href='"+post+".html'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
-  archive_links.append("<span>"+date+"</span><a href='"+post+".html'>" + string.replace(title, '#', '') + "</a><br />")
-  recent_posts.append("<li class="+date+"><a href='"+site_root+post+".html'>"+string.replace(title, '#', '') +"</a></li>")
+  index_posts.append("<hr><div class="+date+"><a href='"+Settings.site_root+post+"/index.html'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
+  archive_links.append("<span>"+date+"</span><a href='"+Settings.site_root+post+"/index.html'>" + string.replace(title, '#', '') + "</a><br />")
+  recent_posts.append("<li class="+date+"><a href='"+Settings.site_root+post+"/index.html'>"+string.replace(title, '#', '') +"</a></li>")
 
 #sort posts by publication date
 recent_posts.sort()
@@ -67,8 +66,8 @@ for link in index_posts:
    index_body = index_body + link
   index_post_count += 1
 
-index_header = string.replace(header, "titlefixed", "blogpy")
-index_file.write(index_header + index_body + string.replace(footer_i, "<!-- recent posts -->", postgroup))
+index_header = string.replace(header, "page_title", Settings.site_name)
+index_file.write(index_header + index_body + string.replace(footer, "<!-- recent posts -->", postgroup))
 index_file.close()
 
 post_count = 0
@@ -84,20 +83,27 @@ for post in posts:
   
   md = markdown.Markdown()
   html = md.convert(file_content)
-  post_file = codecs.open("site/"+post+".html", "w", encoding="utf8")
+  if not os.path.exists("site/" + post):
+    os.makedirs("site/" + post)
+  post_file = codecs.open("site/"+post+"/index.html", "w", encoding="utf8")
 
-  titlefixed = string.replace(title, '#', '')
-  titlefixed = string.replace(titlefixed, '\n', '')
-  curr_header = string.replace(header, "titlefixed", titlefixed)
+  title = string.replace(title, '#', '')
+  title = string.replace(title, '\n', '')
+  curr_header = string.replace(header, "page_title", title)
+  curr_header = string.replace(header, "css/style.css", "../css/style.css")
 
-  post_file.write(curr_header + html + string.replace(footer_p, "<!-- recent posts -->", postgroup))
+  post_file.write(curr_header + html + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()
 
 archive_links_count = len(archive_links)
+archive_header = index_header
+archive_header = string.replace(archive_header, "page_title", "Archive - " + Settings.site_name)
+archive_header = string.replace(archive_header, "css/style.css", "../css/style.css")
+
 archive_body = ""
 for link in archive_links:
   archive_body = archive_body + "#" + str(archive_links_count) + " - " + link
   archive_links_count -= 1
 
-archive_file.write(index_header + archive_body + string.replace(footer_i,"<!-- recent posts -->",postgroup))
+archive_file.write(archive_header + archive_body + string.replace(footer,"<!-- recent posts -->",postgroup))
 archive_file.close()

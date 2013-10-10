@@ -37,9 +37,9 @@ for post in posts:
 
   html_post_start = re.search('<div class="articleline2"></div>', html)
 
-  index_posts.append("<hr><div class="+date+"><a href='"+Settings.site_root+post+"/index.html'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
-  archive_links.append("<span>"+date+"</span><a href='"+Settings.site_root+post+"/index.html'>" + string.replace(title, '#', '') + "</a><br />")
-  recent_posts.append("<li class="+date+"><a href='"+Settings.site_root+post+"/index.html'>"+string.replace(title, '#', '') +"</a></li>")
+  index_posts.append("<hr><div class="+date+"><a href='"+Settings.site_root+post+"/'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
+  archive_links.append("<span>"+date+"</span><a href='"+Settings.site_root+post+"/'>" + string.replace(title, '#', '') + "</a><br />")
+  recent_posts.append("<li class="+date+"><a href='"+Settings.site_root+post+"/'>"+string.replace(title, '#', '') +"</a></li>")
 
 #sort posts by publication date
 recent_posts.sort()

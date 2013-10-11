@@ -11,10 +11,11 @@
 				</div>
 				<div class="line-footer">
 					<div style="text-align:center; padding-top:3px;">
-					    <a href="site_rootarchive/">Archive</a>
+					    <a href="site_rootarchive/">Archive</a> - 
+					    <a href="site_rootrss.xml">Feed</a>
 				    </div>
 				    <div style="text-align:center;">
-				        This site is powered by <a href="https://github.com/travisred/blogpy">blogpy</a> :) 
+				        This site was built with <a href="https://github.com/travisred/blogpy">blogpy</a> :). Theme by <a href="http://fimply.com/elegantwhite">Fimply</a>.
 				    </div>
 				</div>
 			</div>    

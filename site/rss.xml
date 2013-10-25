@@ -1,12 +1,12 @@
 <rss version="2.0">
   <channel>
-  	<title>blogpy</title>
-  	<link>http://blogpy.reddino.org/</link>
-  	<description>A simple static blog generator in python</description>
+  	<title>Xiaxiaoyu's github</title>
+  	<link>http://xiaxiaoyu1988.github.io/</link>
+  	<description>边走边悟</description>
 		<item>
-    	<title>Hello, World!</title>
-    	<pubDate>2013-10-10</pubDate>
-    	<link>http://blogpy.reddino.org/hello/</link>
+    	<title>Hello, World!</title>
+    	<pubDate>2013-10-10</pubDate>
+    	<link>http://xiaxiaoyu1988.github.io/hello/</link>
     </item>
 	</channel>
 </rss>

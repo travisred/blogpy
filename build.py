@@ -31,6 +31,12 @@ footer = footer_file.read()
 footer_file.close()
 footer = string.replace(footer, "site_root", Settings.site_root)
 
+
+comment_file = codecs.open("static/comment", mode="r", encoding="utf8")
+comment = comment_file.read()
+comment_file.close()
+
+
 # The ugliest RSS feed generator. Should clean it up someday.
 def rss(posts, rss_file):
   rss_body = """<rss version="2.0">
@@ -134,7 +140,7 @@ for post in posts:
   curr_header = string.replace(header, "page_title", title)
   curr_header = string.replace(curr_header, "css/style.css", "../css/style.css")
 
-  post_file.write(curr_header + html + string.replace(footer, "<!-- recent posts -->", postgroup))
+  post_file.write(curr_header + html + comment + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()
 
 archive_links_count = len(archive_links)

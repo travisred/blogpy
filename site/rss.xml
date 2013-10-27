@@ -1,12 +1,12 @@
 <rss version="2.0">
   <channel>
   	<title>Xiaxiaoyu's GitHub</title>
-  	<link>http://git.xtimer.org</link>
+  	<link>http://git.xtimer.org/</link>
   	<description>边走边悟</description>
 		<item>
     	<title>Hello, World!</title>
     	<pubDate>2013-10-10</pubDate>
-    	<link>http://git.xtimer.orghello/</link>
+    	<link>http://git.xtimer.org/hello/</link>
     </item>
 	</channel>
 </rss>

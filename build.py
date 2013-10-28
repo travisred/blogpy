@@ -10,6 +10,11 @@ __status__ = "Production"
 import os, markdown, codecs, string, re
 from settings import Settings
 
+ #Fix site_root missing '/' bug by https://github.com/xiaxiaoyu1988
+
+if not Settings.site_root.endswith('/'):
+  Settings.site_root += '/'
+
 index_posts = []
 recent_posts = []
 archive_links = []
@@ -31,7 +36,7 @@ footer = footer_file.read()
 footer_file.close()
 footer = string.replace(footer, "site_root", Settings.site_root)
 
-
+#Add comment file for support social comment. 2013-10-28 by https://github.com/xiaxiaoyu1988
 comment_file = codecs.open("static/comment", mode="r", encoding="utf8")
 comment = comment_file.read()
 comment_file.close()
@@ -139,7 +144,7 @@ for post in posts:
   title = string.replace(title, '\n', '')
   curr_header = string.replace(header, "page_title", title)
   curr_header = string.replace(curr_header, "css/style.css", "../css/style.css")
-
+  #Add comment support by https://github.com/xiaxiaoyu1988
   post_file.write(curr_header + html + comment + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()
 

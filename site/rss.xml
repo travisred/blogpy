@@ -8,5 +8,10 @@
     	<pubDate>2013-10-10</pubDate>
     	<link>http://git.xtimer.org/hello/</link>
     </item>
+		<item>
+    	<title>[1]:https://github.com/travisred/blogpy</title>
+    	<pubDate></pubDate>
+    	<link>http://git.xtimer.org/blogpy/</link>
+    </item>
 	</channel>
 </rss>

@@ -1,11 +1,9 @@
-[1]:https://github.com/travisred/blogpy
-[2]:http://git.xtimer.org/
-
-#blogpy (Forked from [Travisred][1])#
+# blogpy #
 <div class="articleline1"></div>
 2013-10-28
 <div class="articleline2"></div>
 
+**blogpy(Forked from [Travisred][1])**
 ![blogpy](https://raw.github.com/travisred/blogpy/master/screenshot.png)
 
 A static blog generator written in python. You can see it in action at [git.xtimer.org][2].
@@ -29,3 +27,6 @@ Note: as of v2.0, links for posts changed from /md-file-title.html to /md-file-t
 2. Fix missing '/' bug  
 
 Licensed under GPL v3.0.
+
+[1]:https://github.com/travisred/blogpy
+[2]:http://git.xtimer.org/

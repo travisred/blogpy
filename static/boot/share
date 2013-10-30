@@ -9,7 +9,7 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Welcome to Ghost&url=http://site_root/post_name/"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Welcome to Xtimer.org&url=http://site_root/post_name/"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>

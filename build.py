@@ -183,7 +183,7 @@ for post in posts:
   post_share = string.replace(share, "site_root", Settings.site_root)
   post_share = string.replace(share, "post_name", post)
   #Add comment support by https://github.com/xiaxiaoyu1988
-  post_file.write(curr_header + html + post_share +  comment + string.replace(footer, "<!-- recent posts -->", postgroup))
+  post_file.write(curr_header + html + post_share + '<br/><br/><br/>' +comment + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()
 
 archive_links_count = len(archive_links)

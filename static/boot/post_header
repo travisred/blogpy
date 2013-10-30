@@ -22,12 +22,19 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="site_rootrss">
 <style type="text/css"></style></head>
 <body class="post-template tag-getting-started" style="">
-
-    
-    
-
-
-
+             <div id="sidebar" style="float:right;margin-right:10%;margin-top:14%;">
+        <div id="sidebar-widget">   
+            <div class="sidebar-heading">Recent Posts</div>
+                <ul>
+                 <!-- recent posts --> 
+                </ul>
+        </div>
+        <div id="sidebar-widget">   
+            <div class="sidebar-heading"><a href="site_rootarchive">Archive</a></div>
+                
+        </div>
+    </div>
+    <div id="clear"></div>
 <main class="content" role="main">
 
     <article class="post tag-getting-started">

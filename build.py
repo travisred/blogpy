@@ -148,7 +148,7 @@ for link in index_posts:
   index_post_count += 1
 
 index_header = string.replace(header, "page_title", Settings.site_name)
-index_file.write(index_header + index_body + string.replace(footer, "<!-- recent posts -->", postgroup))
+index_file.write(string.replace(index_header, "<!-- recent posts -->", postgroup) + index_body + string.replace(footer, "<!-- recent posts -->", postgroup))
 index_file.close()
 
 
@@ -183,7 +183,7 @@ for post in posts:
   post_share = string.replace(share, "site_root", Settings.site_root)
   post_share = string.replace(share, "post_name", post)
   #Add comment support by https://github.com/xiaxiaoyu1988
-  post_file.write(curr_header + html + post_share + '<br/><br/><br/>' +comment + string.replace(footer, "<!-- recent posts -->", postgroup))
+  post_file.write(string.replace(curr_header, "<!-- recent posts -->", postgroup) + html + post_share + '<br/><br/><br/>' +comment + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()
 
 archive_links_count = len(archive_links)
@@ -198,7 +198,7 @@ for link in archive_links:
   archive_body = archive_body + "#" + str(archive_links_count) + " - " + link
   archive_links_count -= 1
 
-archive_file.write(archive_header + '<article class="post tag-getting-started">' + archive_body + string.replace(footer,"<!-- recent posts -->",postgroup) + '</article>')
+archive_file.write(string.replace(archive_header,"<!-- recent posts -->",postgroup) + '<article class="post tag-getting-started">' + archive_body + string.replace(footer,"<!-- recent posts -->",postgroup) + '</article>')
 archive_file.close()
 
 rss(posts, rss_file)

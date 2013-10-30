@@ -5,19 +5,7 @@
 </nav>
 
 </main>
-<div id="sidebar" style="position:fixed;_position:absolute;top:68%;z-index:250;right:10%;">    
-        <div id="sidebar-widget">   
-            <div class="sidebar-heading">Recent Posts</div>
-                <ul>
-                 <!-- recent posts --> 
-                </ul>
-        </div>
-        <div id="sidebar-widget">   
-            <div class="sidebar-heading"><a href="site_rootarchive">Archive</a></div>
-                
-        </div>
-    </div>
-    <div id="clear"></div>
+
 
     <footer class="site-footer">
         <a class="subscribe icon-feed" href="site_rootrss.xml"><span class="tooltip">Subscribe!</span></a>

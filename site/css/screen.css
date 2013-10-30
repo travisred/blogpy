@@ -992,6 +992,7 @@ img.alignnone {
 }
 
 
+#box{float:left;position:relative;width:250px;}.div1{width:250px;}.div2{position:fixed;_position:absolute;top:0;z-index:250;}
 
 /* ==========================================================================
    End of file. Media queries should be the last thing here. Do not add stuff

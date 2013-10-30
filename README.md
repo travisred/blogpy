@@ -1,7 +1,7 @@
 blogpy v2.0
 ======
 
-![blogpy](https://raw.github.com/travisred/blogpy/master/screenshot.png)
+![blogpy](http://git.xtimer.org/img/screenshot.png)
 
 A static blog generator written in python. You can see it in action at [blogpy.reddino.org](http://blogpy.reddino.org).
 

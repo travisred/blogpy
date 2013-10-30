@@ -4,7 +4,7 @@
 <div class="articleline2"></div>
 
 **blogpy(Forked from [Travisred][1])**
-![blogpy](https://raw.github.com/travisred/blogpy/master/screenshot.png)
+![blogpy](../img/screenshot.png)
 
 A static blog generator written in python. You can see it in action at [git.xtimer.org][2].
 

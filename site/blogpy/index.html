@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     
-    <title> Hello, World! </title>
+    <title> blogpy </title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -47,12 +47,28 @@
                 
             </a>
         </header>
-<h1>Hello, World!</h1>
+<h1>blogpy</h1>
 <p><div class="articleline1"></div>
-2013-10-10
+2013-10-28
 <div class="articleline2"></div></p>
-<p><img alt="Hello, World! from blogpy" src="../img/hello-world-blogpy.jpg" title="Hello, World!" /></p>
-<p>This is the default example post for <strong>blogpy</strong>, a simple static blog generator in python. Simply edit this file in <code>/md/hello</code> or create a new file there to get started.</p><footer class="post-footer">
+<p><strong>blogpy(Forked from <a href="https://github.com/travisred/blogpy">Travisred</a>)</strong>
+<img alt="blogpy" src="../img/screenshot.png" /></p>
+<p>A static blog generator written in python. You can see it in action at <a href="http://git.xtimer.org/">git.xtimer.org</a>.</p>
+<p><strong>Requirements:</strong><br />
+<em> Python 2.7<br />
+</em> Python-Markdown package  </p>
+<p><strong>How to use:</strong><br />
+1. git clone https://github.com/travisred/blogpy.git<br />
+2. edit settings.py to fit your site<br />
+3. edit static/comment to add your disqus code<br />
+4. add a markdown-formatted post to md -- you can see an example at md/hello<br />
+5. python build.py<br />
+6. upload the "site" directory to host  </p>
+<p>Note: as of v2.0, links for posts changed from /md-file-title.html to /md-file-title/.</p>
+<p><strong>Update:</strong><br />
+1. Add disqus comment support<br />
+2. Fix missing '/' bug  </p>
+<p>Licensed under GPL v3.0.</p><footer class="post-footer">
 
             
                 <section class="author">
@@ -63,15 +79,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Welcome to Xtimer.org&url=http://site_root/hello/"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Welcome to Xtimer.org&url=http://site_root/blogpy/"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://site_root/hello/"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://site_root/blogpy/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://site_root/hello/"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://site_root/blogpy/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

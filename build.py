@@ -10,6 +10,11 @@ __status__ = "Production"
 import os, markdown, codecs, string, re
 from settings import Settings
 
+ #Fix site_root missing '/' bug by https://github.com/xiaxiaoyu1988
+
+if not Settings.site_root.endswith('/'):
+  Settings.site_root += '/'
+
 index_posts = []
 recent_posts = []
 archive_links = []
@@ -19,17 +24,35 @@ index_file = codecs.open("site/index.html", mode="w", encoding="utf8")
 rss_file = codecs.open("site/rss.xml", mode="w", encoding="utf8")
 archive_file = codecs.open("site/archive/index.html", mode="w", encoding="utf8")
 
-header_file = codecs.open("static/header", mode="r", encoding="utf8")
+header_file = codecs.open("static/" + Settings.site_theme + "/header", mode="r", encoding="utf8")
 header = header_file.read()
 header_file.close()
 header = string.replace(header, "site_root", Settings.site_root)
 header = string.replace(header, "site_name", Settings.site_name)
 header = string.replace(header, "site_description", Settings.site_description)
 
-footer_file = codecs.open("static/footer", mode="r", encoding="utf8")
+post_header_file = codecs.open("static/" + Settings.site_theme + "/post_header", mode="r", encoding="utf8")
+post_header = post_header_file.read()
+post_header_file.close()
+post_header = string.replace(post_header, "site_root", Settings.site_root)
+post_header = string.replace(post_header, "site_name", Settings.site_name)
+post_header = string.replace(post_header, "site_description", Settings.site_description)
+
+footer_file = codecs.open("static/" + Settings.site_theme + "/footer", mode="r", encoding="utf8")
 footer = footer_file.read()
 footer_file.close()
 footer = string.replace(footer, "site_root", Settings.site_root)
+footer = string.replace(footer, "site_name", Settings.site_name)
+
+
+#Add comment file for support social comment. 2013-10-28 by https://github.com/xiaxiaoyu1988
+comment_file = codecs.open("static/" + Settings.site_theme + "/comment", mode="r", encoding="utf8")
+comment = comment_file.read()
+comment_file.close()
+
+share_file = codecs.open("static/" + Settings.site_theme + "/share", mode="r", encoding="utf8")
+share = share_file.read()
+share_file.close()
 
 # The ugliest RSS feed generator. Should clean it up someday.
 def rss(posts, rss_file):
@@ -73,12 +96,28 @@ for post in posts:
   date = file_content_lines[2]
   input_file.close()
 
+  # file_content = file_content[0:Settings.site_post_abstract]
+
   md = markdown.Markdown()
   html = md.convert(file_content)
+  # print html
+  html_post_start = re.search('<div class="articleline1"></div>', html)
+  html_post_end = re.search('<div class="articleline2"></div>', html)
+  # print html_post_start.start(),html_post_end.start()
+  tmp_date = html[html_post_start.end():html_post_end.start()].strip()
+  # print tmp_date
 
-  html_post_start = re.search('<div class="articleline2"></div>', html)
-
-  index_posts.append("<hr><div class="+date+"><a href='"+Settings.site_root+post+"/'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
+  tmp_header = '''<header class="post-header">
+            <span class="post-meta"><time datetime="%s">%s</time> on Getting Started</span>
+            <h2 class="post-title"><a href="%s">%s</a></h2>
+        </header>'''%(tmp_date,tmp_date,Settings.site_root+post,string.replace(title, '#', ''))
+  tmp_section = ''
+  # print html[html_post_start.start():html_post_end.end()]
+  html = string.replace(html, html[html_post_start.start():html_post_end.end()], '')
+  # html = html[0:Settings.site_post_abstract]
+  tmp_post = '<article class="post tag-getting-started">' + tmp_header + html[html_post_start.start():] + '</article>'
+  index_posts.append(tmp_post)
+  # index_posts.append("<hr><div class="+date+"><a href='"+Settings.site_root+post+"/'><h1>" + string.replace(title, '#', '') + "</h1></a>"+html[html_post_start.start():]+"</div>")
   archive_links.append("<span>"+date+"</span><a href='"+Settings.site_root+post+"/'>" + string.replace(title, '#', '') + "</a><br>")
   recent_posts.append("<li class="+date+"><a href='"+Settings.site_root+post+"/'>"+string.replace(title, '#', '') +"</a></li>")
 
@@ -109,9 +148,14 @@ for link in index_posts:
   index_post_count += 1
 
 index_header = string.replace(header, "page_title", Settings.site_name)
-index_file.write(index_header + index_body + string.replace(footer, "<!-- recent posts -->", postgroup))
+index_file.write(string.replace(index_header, "<!-- recent posts -->", postgroup) + index_body + string.replace(footer, "<!-- recent posts -->", postgroup))
 index_file.close()
 
+
+share_tpl = ''''''
+
+footer = string.replace(footer, "js/jquery.js", "../js/jquery.js")
+footer = string.replace(footer, "js/index.js", "../js/index.js")
 post_count = 0
 for post in posts:
 
@@ -131,23 +175,30 @@ for post in posts:
 
   title = string.replace(title, '#', '')
   title = string.replace(title, '\n', '')
-  curr_header = string.replace(header, "page_title", title)
-  curr_header = string.replace(curr_header, "css/style.css", "../css/style.css")
+  curr_header = string.replace(post_header, "page_title", title)
+  # curr_header = string.replace(curr_header, "css/style.css", "../css/style.css")
+  # curr_header = string.replace(curr_header, "css/css", "../css/css")
+  # curr_header = string.replace(curr_header, "css/screen.css", "../css/screen.css")
 
-  post_file.write(curr_header + html + string.replace(footer, "<!-- recent posts -->", postgroup))
+  post_share = string.replace(share, "site_root", Settings.site_root)
+  post_share = string.replace(share, "post_name", post)
+  #Add comment support by https://github.com/xiaxiaoyu1988
+  post_file.write(string.replace(curr_header, "<!-- recent posts -->", postgroup) + html + post_share + '<br/><br/><br/>' +comment + string.replace(footer, "<!-- recent posts -->", postgroup))
   post_file.close()
 
 archive_links_count = len(archive_links)
 archive_header = index_header
 archive_header = string.replace(archive_header, "page_title", "Archive - " + Settings.site_name)
 archive_header = string.replace(archive_header, "css/style.css", "../css/style.css")
+archive_header = string.replace(archive_header, "css/screen.css", "../css/screen.css")
+archive_header = string.replace(archive_header, "css/css", "../css/css")
 
 archive_body = ""
 for link in archive_links:
   archive_body = archive_body + "#" + str(archive_links_count) + " - " + link
   archive_links_count -= 1
 
-archive_file.write(archive_header + archive_body + string.replace(footer,"<!-- recent posts -->",postgroup))
+archive_file.write(string.replace(archive_header,"<!-- recent posts -->",postgroup) + '<article class="post tag-getting-started">' + archive_body + string.replace(footer,"<!-- recent posts -->",postgroup) + '</article>')
 archive_file.close()
 
 rss(posts, rss_file)

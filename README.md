@@ -1,7 +1,7 @@
 blogpy v2.0
 ======
 
-![blogpy](https://raw.github.com/travisred/blogpy/master/screenshot.png)
+![blogpy](http://git.xtimer.org/img/screenshot.png)
 
 A static blog generator written in python. You can see it in action at [blogpy.reddino.org](http://blogpy.reddino.org).
 
@@ -13,6 +13,7 @@ A static blog generator written in python. You can see it in action at [blogpy.r
 <ol>
 <li>git clone https://github.com/travisred/blogpy.git</li>
 <li>edit settings.py to fit your site</li>
+<li>edit static/comment to add your disqus code</li>
 <li>add a markdown-formatted post to md -- you can see an example at md/hello</li>
 <li>python build.py</li>
 <li>upload the "site" directory to host</li>

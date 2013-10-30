@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0019)http://k.ernel.org/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    
+    <title>page_title</title>
+    <meta name="description" content="Shut up and code!">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="css/screen.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400">
+
+    
+    <meta name="generator" content="Ghost 0.3">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="site_rootrss.xmlrss">
+<style type="text/css"></style></head>
+<body class="home-template" style="">
+<header id="site-head">
+    <div class="vertical">
+        <div id="site-head-content" class="inner">
+
+            
+            <h1 class="blog-title">page_title</h1>
+            <h2 class="blog-description">Shut up and code!</h2>
+        </div>
+    </div>
+</header>
+<a href="https://github.com/xiaxiaoyu1988"><img style="width: 160px; height: 160px;position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+ <div id="sidebar" style="float:right;margin-right:10%;">    
+        <div id="sidebar-widget">   
+            <div class="sidebar-heading">Recent Posts</div>
+                <ul>
+                 <!-- recent posts --> 
+                </ul>
+        </div>
+        <div id="sidebar-widget">   
+            <div class="sidebar-heading"><a href="site_rootarchive">Archive</a></div>
+                
+        </div>
+    </div>
+    <div id="clear"></div>
+
+<main class="content" role="main">

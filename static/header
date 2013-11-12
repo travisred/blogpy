@@ -11,7 +11,7 @@
 	<body class="home blog">
 		<div id="line"></div>
 		<div id="container">
-			<div id="blogtitle"><a class="heading" href="site_root">blogpy</a></div>
+			<div id="blogtitle"><a class="heading" href="site_root">site_name</a></div>
 			<div id="blogdescription">site_description</div>
 			<div id="clear"></div>
 			<div id="header-settings">

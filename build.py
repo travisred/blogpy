@@ -1,12 +1,3 @@
-__author__ = "Travis Reddell"
-__copyright__ = "Copyright 2013, Travis Reddell"
-__credits__ = ["Travis Reddell"]
-__license__ = "GPL"
-__version__ = "3.0"
-__maintainer__ = "Travis Reddell"
-__email__ = "t@reddino.org"
-__status__ = "Production"
-
 import os, markdown, codecs, string, re
 from settings import Settings
 

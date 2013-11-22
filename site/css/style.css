@@ -17,6 +17,8 @@ Modified by Travis Reddell
 
 /* --------- Alignment --------- */
 
+#sidebar li { list-style-type: none; }
+
 .alignleft {
 	display: inline;
 	float: left;

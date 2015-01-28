@@ -10,6 +10,7 @@ License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
 Modified by Travis Reddell
+
 */
 
 /* ---------------------------------- Start ---------------------------------- */
@@ -71,6 +72,8 @@ img.alignnone {
 }
 
 /* Text elements */
+
+hr { background-color: #dddddd; height: 1px; border: 0; }
 
 p {
 	margin-bottom: 1.625em;
@@ -666,34 +669,12 @@ span.date {
 
 /* ----------------- Footer ----------------- */
 
-#footer-text {
-    font-family: Helvetica;
-    text-align: center;
-    margin:20px 30px 0px 30px;
-	font-weight: 100;
-	color:#515151;
-	line-height: 27px;
-}
-
-#footer-credit {
-    font-family: Helvetica;
-    text-align: center;
-    margin:20px 30px 20px 30px;
-	font-weight: 100;
-	color:#515151;
-	font-size:11px;
-	text-transform: uppercase;
-	letter-spacing: .1em;
-}
-
-.line-footer {
-	height:1px;
-	margin:-5px 30px 0px 30px;
-	background-color: #dddddd;
+.footer {
+	text-align: center;
+	margin: 10px 0 10px 0;
 }
 
 }
-
 
 /* ----------------- Desktop Layout ----------------- */
 

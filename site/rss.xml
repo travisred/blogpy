@@ -1,12 +1,12 @@
 <rss version="2.0">
   <channel>
   	<title>blogpy</title>
-  	<link>http://blogpy.reddino.org/</link>
+  	<link>http://example.com/</link>
   	<description>A simple static blog generator in python</description>
-		<item>
-    	<title>Hello, World!</title>
-    	<pubDate>2013-10-10</pubDate>
-    	<link>http://blogpy.reddino.org/hello/</link>
-    </item>
+	<item>
+    		<title>Hello, World!</title>
+    		<pubDate>2013-10-10</pubDate>
+    		<link>http://example.com/hello/</link>
+    	</item>
 	</channel>
 </rss>

@@ -9,14 +9,15 @@
 					</div>
 					<div id="clear"></div>
 				</div>
-				<div class="line-footer">
-					<div style="text-align:center; padding-top:3px;">
+<hr>
+				<div class="footer">
+					<p>
 					    <a href="site_rootarchive/">Archive</a> - 
 					    <a href="site_rootrss.xml">Feed</a>
-				    </div>
-				    <div style="text-align:center;">
+				    </p>
+				    <p>
 				        This site was built with <a href="https://github.com/travisred/blogpy">blogpy</a> :). Theme by <a href="http://fimply.de/">Fimply</a>, modified.
-				    </div>
+				    </p>
 				</div>
 			</div>    
 		</div>

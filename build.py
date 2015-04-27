@@ -46,7 +46,8 @@ def parse_posts(posts):
     parsed_post.title = file_content_lines[0]
     parsed_post.date = file_content_lines[1]
     parsed_post.url = Settings.site_root + post + '/'
-    parsed_post.html = markdown.Markdown().convert('\n'.join(file_content_lines[2:]))
+    parsed_post.html = '\n'.join(file_content_lines[2:])
+    parsed_post.html = markdown.Markdown().convert(parsed_post.html)
     parsed_posts.append(parsed_post)
       
     parsed_posts.sort(key = lambda x: x.date, reverse=True)
@@ -71,28 +72,34 @@ parsed_posts = parse_posts(posts)
 
 postgroup = ""
 for i in range(len(parsed_posts[0:11])):
-  postgroup = postgroup + "<li><a href='" + parsed_posts[i].url + "'>" + parsed_posts[i].title + "</a></li>"
+  postgroup = postgroup + "<li><a href='" + (parsed_posts[i].url + 
+    "'>" + parsed_posts[i].title + "</a></li>")
 
 index_body = ""
 for i in range(len(parsed_posts[0:Settings.number_of_posts_on_front_page - 1])):
   index_html = parsed_posts[i].html.replace('../img/', 'img/')
-  index_body = index_body + "<div><a href='" + parsed_posts[i].url + "'><h1>" + parsed_posts[i].title + "</h1><hr>" + parsed_posts[i].date + "</a>" + index_html + "</div>"
+  index_body = index_body + "<div><a href='" + (parsed_posts[i].url + 
+    "'><h1>" + parsed_posts[i].title) + ("</h1><hr>" + parsed_posts[i].date +
+    "</a>" + index_html + "</div>")
 
 index_header = header.replace("page_title", Settings.site_name)
 index_file = codecs.open("site/index.html", mode="w", encoding="utf8")
-index_file.write(index_header + index_body + footer.replace("<!-- recent posts -->", postgroup))
+index_file.write(index_header + (index_body +
+  footer.replace("<!-- recent posts -->", postgroup)))
 index_file.close()
 
 for parsed_post in parsed_posts:
   if not os.path.exists("site/" + parsed_post.slug):
     os.makedirs("site/" + parsed_post.slug)
-  post_file = codecs.open("site/" + parsed_post.slug + "/index.html", "w", encoding="utf8")
+  post_file = codecs.open("site/" + (parsed_post.slug +
+    "/index.html"), "w", encoding="utf8")
 
   curr_header = header.replace("page_title", parsed_post.title)
   curr_header = curr_header.replace("css/style.css", "../css/style.css")
   title_h1 = "<h1>" + parsed_post.title + "</h1>"
   date_hr = "<hr>" + parsed_post.date + "<hr>"
-  post_file.write(curr_header + title_h1 + date_hr + parsed_post.html + footer.replace("<!-- recent posts -->", postgroup))
+  post_file.write(curr_header + title_h1 + date_hr + (parsed_post.html +
+    footer.replace("<!-- recent posts -->", postgroup)))
   post_file.close()
 
 archive_header = index_header

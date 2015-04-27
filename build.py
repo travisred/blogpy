@@ -11,6 +11,7 @@ class Post:
     date = ""
     url = ""
 
+
 def rss(posts):
   rss_body = """<rss version="2.0">
   <channel>
@@ -29,6 +30,7 @@ def rss(posts):
   rss_file = codecs.open("site/rss.xml", mode="w", encoding="utf8")
   rss_file.write(rss_body)
   rss_file.close()
+
 
 def parse_posts(posts):
   parsed_posts = []
@@ -53,6 +55,7 @@ def parse_posts(posts):
     parsed_posts.sort(key = lambda x: x.date, reverse=True)
   
   return parsed_posts
+
 
 posts = os.listdir(os.getcwd()+"/md")
 

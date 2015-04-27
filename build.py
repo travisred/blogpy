@@ -42,7 +42,7 @@ def parse_posts(posts):
     file_content = input_file.read()
     input_file.close()
 
-    file_content_lines = file_content.split('\n')
+    file_content_lines = file_content.splitlines()
     
     parsed_post.slug = post
     parsed_post.title = file_content_lines[0]

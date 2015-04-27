@@ -57,7 +57,7 @@ def parse_posts(posts):
   return parsed_posts
 
 
-posts = os.listdir(os.getcwd()+"/md")
+posts = os.listdir(os.getcwd() + "/md")
 
 header_file = codecs.open("static/header", mode="r", encoding="utf8")
 header = header_file.read()
@@ -111,7 +111,7 @@ archive_header = archive_header.replace("css/style.css", "../css/style.css")
 
 archive_body = ""
 for i in range(len(parsed_posts)):
-  archive_body = archive_body + "#" + str(i) + " - " +"<span>" + parsed_posts[i].date + "</span> <a href='" + parsed_posts[i].url + "'>" + parsed_posts[i].title + "</a><br>"
+  archive_body = archive_body + "#" + str(i) + " - " + "<span>" + parsed_posts[i].date + "</span> <a href='" + parsed_posts[i].url + "'>" + parsed_posts[i].title + "</a><br>"
 
 archive_file = codecs.open("site/archive/index.html", mode="w", encoding="utf8")
 archive_file.write(archive_header + archive_body + footer.replace("<!-- recent posts -->",postgroup))

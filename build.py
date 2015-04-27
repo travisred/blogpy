@@ -1,5 +1,11 @@
-import os, markdown, codecs, re
+import os
+import codecs
+import re
+
+import markdown
+
 from settings import Settings
+
 class Post:
     title = ""
     date = ""

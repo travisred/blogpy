@@ -22,4 +22,4 @@ Note: as of v2.0, links for posts changed from /md-file-title.html to /md-file-t
 
 Licensed under GPL v3.0.
 
-If you need somewhere to host your site, check out [Digital Ocean](https://www.digitalocean.com/?refcode=314851abcefa)
+If you need somewhere to host your site, check out [Digital Ocean](https://www.digitalocean.com/?refcode=314851abcefa).

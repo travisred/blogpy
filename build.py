@@ -50,7 +50,7 @@ def parse_posts(posts):
     parsed_post.date = file_content_lines[1]
     parsed_post.url = Settings.site_root + post + '/'
     parsed_post.html = '\n'.join(file_content_lines[2:])
-    parsed_post.html = markdown.Markdown().convert(parsed_post.html)
+    parsed_post.html = markdown.Markdown(extensions=['markdown.extensions.extra','markdown.extensions.codehilite(linenums=False)']).convert(parsed_post.html)
     parsed_posts.append(parsed_post)
       
     parsed_posts.sort(key = lambda x: x.date, reverse=True)
